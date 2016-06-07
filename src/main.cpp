@@ -137,7 +137,9 @@ ReadXBytes (int socket, unsigned int x, void *buffer)
 int
 handle_session (int session_fd)
 {
+
 // read the input
+/*
   unsigned int length1 = 0;
   char *buffer1 = 0;
   cout << "read length" << endl;
@@ -147,6 +149,9 @@ handle_session (int session_fd)
   buffer1 = new char[length1];
   cout << "read content" << endl;
   ReadXBytes (session_fd, length1, (void *) buffer1);
+  */
+char buffer1[256];
+int n = read(session_fd, buffer1, 255);
   cout << buffer1 << endl;
 
 // split the strings
